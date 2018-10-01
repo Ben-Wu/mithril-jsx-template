@@ -1,6 +1,6 @@
 # Mithril + JSX Template
 
-Template for a [Mithril.js](https://mithril.js.org/) with JSX syntax using Babel 7 and Webpack 4
+Template for a [Mithril.js](https://mithril.js.org/) project supporting JSX and SASS using Babel 7 and Webpack 4
 
 ## Usage
 
