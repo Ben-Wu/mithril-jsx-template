@@ -1,0 +1,12 @@
+{
+  "name": "mithril-jsx-template",
+  "version": "1.0.0",
+  "description": "Template for mithril.js projects using jsx and ES6 through webpack",
+  "main": "index.js",
+  "author": "Ben Wu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ben-Wu/Resume.git"
+  }
+}
