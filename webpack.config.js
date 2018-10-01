@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: { main: './src/index.js' },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'app.js',
@@ -13,10 +14,18 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       }
     ]
   },
   plugins: [
+    new ExtractTextPlugin({ filename: "index.css" }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
@@ -24,9 +33,6 @@ module.exports = {
       filename: 'index.html'
     })
   ],
-  resolve: {
-    extensions: ['*', '.js', '.jsx']
-  },
   devServer: {
     contentBase: './dist'
   }
